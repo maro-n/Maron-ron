@@ -17,7 +17,6 @@ void draw()
     t_limit -= 1;
     textSize(20);
     text("point", 350, 480);
-    text(point, 420, 480);
     //text(switch_s, 0, 50);
     //text(switch_w, 0, 100);
     //text(switch_e, 0, 150);
@@ -46,6 +45,14 @@ void draw()
       textSize(100);
       fill(255, 0, 0);
       text("end", (width / 2) - 90, (height / 2) + 100);
+      textSize(50);
+      fill(255, 0, 0);
+      text(point, 420, 480);
       noLoop();
+    }
+    else{
+      text(point, 420, 480);
+      textSize(100);
+      text("roll!!", (width / 2) - 100, (height / 2) - 90);
     }
 }
