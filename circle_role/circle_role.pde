@@ -3,6 +3,7 @@ int switch_w = 0;
 int switch_n = 0;
 int switch_e = 0;
 int point = 0;
+int t_limit = 1200;
 
 void setup()
 {
@@ -13,6 +14,7 @@ void draw()
 {
     background (255, 255, 255);
     fill(0);
+    t_limit -= 1;
     textSize(20);
     text("point", 350, 480);
     text(point, 420, 480);
@@ -39,5 +41,11 @@ void draw()
       switch_w = 0;
       switch_n = 0;
       switch_e = 0;
+    }
+    if(t_limit == 0){
+      textSize(100);
+      fill(255, 0, 0);
+      text("end", (width / 2) - 90, (height / 2) + 100);
+      noLoop();
     }
 }
