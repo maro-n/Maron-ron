@@ -25,13 +25,13 @@ void draw()
     if(mouseX >= 220 && mouseX <= 280 && mouseY > 275 && switch_s == 0){
       switch_s = 1;
     }
-    if(mouseX < 225 && mouseY >= 220 && mouseY <= 280 && switch_w == 0){
+    if(mouseX < 225 && mouseY >= 220 && mouseY <= 280 && switch_w == 0 && switch_s == 1){
       switch_w = 1;
     }
-    if(mouseX >= 220 && mouseX <= 280 && mouseY < 225 && switch_n == 0){
+    if(mouseX >= 220 && mouseX <= 280 && mouseY < 225 && switch_n == 0 && switch_w == 1){
       switch_n = 1;
     }
-    if(mouseX > 275 && mouseY >= 220 && mouseY <= 280 && switch_e == 0){
+    if(mouseX > 275 && mouseY >= 220 && mouseY <= 280 && switch_e == 0 && switch_n == 1){
       switch_e = 1;
     }
     if(switch_s == 1 && switch_w == 1 &&  switch_n == 1 && switch_e == 1){
