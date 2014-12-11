@@ -6,6 +6,5 @@
 //
 
 // コンストラクタ
-Result::Result(){
-
+Result::Result() :  BG(Texture("res/Result_BG.png")){
 }

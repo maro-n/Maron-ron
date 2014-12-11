@@ -7,7 +7,8 @@
 
 // コンストラクタ
 Title::Title() :
-font(std::make_unique<Font>("res/font/alphabet.ttf")) {
+font(std::make_unique<Font>("res/font/alphabet.ttf")),
+BG(Texture("res/Title_BG.png")) {
   font->size(40);
 }
 

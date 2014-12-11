@@ -7,8 +7,12 @@
 //
 
 class Result {
+
+  Texture BG;
+
 public:
   Result();
 
   void draw_bg();
+  void Reset();
 };
