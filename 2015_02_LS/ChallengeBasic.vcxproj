@@ -100,6 +100,7 @@
     <ClCompile Include="src\lib\texture.cpp" />
     <ClCompile Include="src\lib\utils.cpp" />
     <ClCompile Include="src\lib\wav.cpp" />
+    <ClCompile Include="src\origin\Game\stage_select.cpp" />
     <ClCompile Include="src\origin\main.cpp" />
     <ClCompile Include="src\origin\Object\collision.cpp" />
     <ClCompile Include="src\origin\Scene\result.cpp" />

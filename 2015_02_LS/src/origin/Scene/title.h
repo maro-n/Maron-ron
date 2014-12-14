@@ -11,11 +11,12 @@ class Title {
   std::unique_ptr<Font> font;
 
   Texture BG;
-  void draw_bg();
-  void draw_logo();
 
 public:
   Title();
 
   void draw();
+  void update();
+
+  void reset();
 };

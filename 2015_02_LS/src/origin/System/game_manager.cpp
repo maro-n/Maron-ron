@@ -14,7 +14,7 @@ GameManager::GameManager() {
 // ゲーム実行
 void GameManager::play() {
   while (win::app->isOpen() && !EXIT) {
-    //title();
+    title();
     game();
   }
 }
@@ -27,10 +27,17 @@ void GameManager::title() {
   Font font("res/font/MeiryoConsolas.ttf");
   font.size(40);
 
+  title_.reset();
+
   while (win::app->isOpen()) {
     if (win::app->isPushButton(Mouse::LEFT)) { break; }
 
+    title_.update();
+
     win::app->setupDraw();
+
+    title_.draw();
+
     font.draw("タイトル（仮）", Vec2f(0, 0), Color(1, 1, 1)); //debug
     win::app->update();
   }
@@ -59,12 +66,23 @@ void GameManager::stage_select() {
   Font font("res/font/MeiryoConsolas.ttf");
   font.size(40);
 
+  bool click = false;
+
+  stage_select_.reset();
+
   while (win::app->isOpen()) {
-    if (win::app->isPushButton(Mouse::LEFT)) { break; }
+
+    win::mouse_translate();
+
+    stage_select_.update(click);
 
     win::app->setupDraw();
+
+    stage_select_.draw();
     font.draw("ステージ選択（仮）", Vec2f(0, 50), Color(1, 1, 1)); //debug
     win::app->update();
+
+    if (click) { break; }
   }
   win::app->flushInput();
 }
@@ -121,38 +139,23 @@ void GameManager::result() {
   Font font("res/font/MeiryoConsolas.ttf");
   font.size(40);
 
-
-  Vec2f cmd[2] = {
-    { -WIDTH / 2, 60 },
-    { -WIDTH / 2, -60 }
-  };
-
   bool click;
 
-  Vec2f size(200, 50);
-  Color color;
+   result_.reset();
 
   while (win::app->isOpen()) {
-    click = false;
-    //if (win::app->isPushButton(Mouse::LEFT)) { break; }
 
-    win::mouse_translate();
+    click = false;
+
+   result_.update(click, EXIT);
+
 
     win::app->setupDraw();
-    for (int i = 0; i < 2; ++i){
-      color = Color(1, 1, 1);
-      if (Collision::box_to_cursor(cmd[i], size)){
-        color = Color(1, 0, 0);
-        if (win::app->isPushButton(Mouse::LEFT)){
-          click = true;
-          if (i == 1){
-            EXIT = true;
-          }
-        }
-      }
-      drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color);
-    }
+
+   result_.draw();
+
     font.draw("リザルト（仮）", Vec2f(0, -50), Color(1, 1, 1)); //debug
+
     win::app->update();
     if (click){ break; }
   }

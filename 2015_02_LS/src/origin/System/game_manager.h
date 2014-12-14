@@ -3,6 +3,9 @@
 #include "window_create.h"
 #include "../../lib/font.hpp"
 #include "../Object/collision.h"
+#include "../Scene/result.h"
+#include "../Scene/title.h"
+#include "../Game/stage_select.h"
 
 //
 // ƒQ[ƒ€ŠÇ—ƒNƒ‰ƒX
@@ -10,6 +13,9 @@
 
 class GameManager {
   //a
+  Title title_;
+  StageSelect stage_select_;
+  Result result_;
 
   void title();
   void game();

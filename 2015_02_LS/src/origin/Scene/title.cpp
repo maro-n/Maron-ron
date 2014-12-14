@@ -7,17 +7,20 @@
 
 // コンストラクタ
 Title::Title() :
-font(std::make_unique<Font>("res/font/alphabet.ttf")),
-BG(Texture("res/Title_BG.png")) {
+font(std::make_unique<Font>("res/font/alphabet.ttf"))/*,
+BG(Texture("res/png/Title_BG.png"))*/ {
   font->size(40);
 }
 
 // 描画
 void Title::draw() {
-  draw_logo();
+  drawFillBox(0, 0, 100, 100, Color(1, 1, 1));
 }
 
-// ロゴ
-void Title::draw_logo() {
-  font->draw("タイトル", Vec2f(0, 0), Color(1, 1, 1));
+// 更新
+void Title::update(){
+}
+
+// リセット
+void Title::reset(){
 }
