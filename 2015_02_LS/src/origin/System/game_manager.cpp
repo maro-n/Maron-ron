@@ -136,8 +136,6 @@ void GameManager::stage_play() {
 
 // リザルトの処理本体
 void GameManager::result() {
-  Font font("res/font/MeiryoConsolas.ttf");
-  font.size(40);
 
   bool click;
 
@@ -149,12 +147,9 @@ void GameManager::result() {
 
    result_.update(click, EXIT);
 
-
     win::app->setupDraw();
 
    result_.draw();
-
-    font.draw("リザルト（仮）", Vec2f(0, -50), Color(1, 1, 1)); //debug
 
     win::app->update();
     if (click){ break; }
