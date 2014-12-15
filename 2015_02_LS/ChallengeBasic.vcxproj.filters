@@ -91,7 +91,12 @@
     <ClCompile Include="src\origin\Scene\result.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="src\origin\Game\stage_select.cpp" />
+    <ClCompile Include="src\origin\Game\stage.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\origin\Game\stage_select.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\appEnv.hpp">
@@ -182,8 +187,8 @@
     <ClInclude Include="src\origin\Game\stage.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="src\origin\Game\main_loop.h">
-      <Filter>Game</Filter>
+    <ClInclude Include="src\origin\System\disp_number.hpp">
+      <Filter>System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

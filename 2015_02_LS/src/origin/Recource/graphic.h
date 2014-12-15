@@ -1,12 +1,16 @@
 
 #pragma once
 #include "../common.h"
+#include <array>
 
 //
 // ‰æ‘œŠÇ—ƒNƒ‰ƒX
 //
 
 class GraphicResource {
+  GraphicResource() = default;
+
 public:
-  GraphicResource();
+  //static std::array<Texture, 5> bg;
+  //static std::array<Texture, Member> player;
 };

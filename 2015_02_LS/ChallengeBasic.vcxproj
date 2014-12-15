@@ -100,6 +100,7 @@
     <ClCompile Include="src\lib\texture.cpp" />
     <ClCompile Include="src\lib\utils.cpp" />
     <ClCompile Include="src\lib\wav.cpp" />
+    <ClCompile Include="src\origin\Game\stage.cpp" />
     <ClCompile Include="src\origin\Game\stage_select.cpp" />
     <ClCompile Include="src\origin\main.cpp" />
     <ClCompile Include="src\origin\Object\collision.cpp" />
@@ -130,7 +131,6 @@
     <ClInclude Include="src\lib\vector.hpp" />
     <ClInclude Include="src\lib\wav.hpp" />
     <ClInclude Include="src\origin\common.h" />
-    <ClInclude Include="src\origin\Game\main_loop.h" />
     <ClInclude Include="src\origin\Game\stage.h" />
     <ClInclude Include="src\origin\Game\stage_select.h" />
     <ClInclude Include="src\origin\Object\collision.h" />
@@ -139,6 +139,7 @@
     <ClInclude Include="src\origin\Scene\result.h" />
     <ClInclude Include="src\origin\Scene\scene_manager.h" />
     <ClInclude Include="src\origin\Scene\title.h" />
+    <ClInclude Include="src\origin\System\disp_number.hpp" />
     <ClInclude Include="src\origin\System\game_manager.h" />
     <ClInclude Include="src\origin\System\window_create.h" />
   </ItemGroup>

@@ -10,7 +10,10 @@
 class Title {
   std::unique_ptr<Font> font;
 
-  Texture BG;
+  Texture bg;
+
+  void draw_bg();
+  void draw_logo();
 
 public:
   Title();

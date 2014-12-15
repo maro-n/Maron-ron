@@ -2,23 +2,20 @@
 #pragma once
 #include "window_create.h"
 #include "../../lib/font.hpp"
-#include "../Object/collision.h"
 #include "../Scene/result.h"
 #include "../Scene/title.h"
 #include "../Game/stage_select.h"
+#include "../Game/stage.h"
 
 //
 // ƒQ[ƒ€ŠÇ—ƒNƒ‰ƒX
 //
 
 class GameManager {
-  //a
-
-  int win_judge;
-
   Title title_;
   StageSelect stage_select_;
   Result result_;
+  Stage stage_;
 
   void title();
   void game();
@@ -29,8 +26,12 @@ class GameManager {
   void stage_play();
   void result();
 
+  int mode;
+  int stage;
+  bool exit;
+
 public:
   GameManager();
-  bool EXIT;
+
   void play();
 };

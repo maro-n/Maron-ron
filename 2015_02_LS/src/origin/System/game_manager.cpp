@@ -8,12 +8,14 @@
 
 // コンストラクタ
 GameManager::GameManager() {
-  EXIT = false;
+  mode = 0;
+  stage = 1;
+  exit = false;
 }
 
 // ゲーム実行
 void GameManager::play() {
-  while (win::app->isOpen() && !EXIT) {
+  while (win::app->isOpen() && !exit) {
     title();
     game();
   }
@@ -37,8 +39,8 @@ void GameManager::title() {
     win::app->setupDraw();
 
     title_.draw();
-
     font.draw("タイトル（仮）", Vec2f(0, 0), Color(1, 1, 1)); //debug
+
     win::app->update();
   }
   win::app->flushInput();
@@ -50,9 +52,9 @@ void GameManager::title() {
 
 // 本編の処理本体
 void GameManager::game() {
-  while (win::app->isOpen() && !EXIT) {
+  while (win::app->isOpen() && !exit) {
     stage_select();
-    //stage_play();
+    stage_play();
     result();
   }
 }
@@ -71,15 +73,14 @@ void GameManager::stage_select() {
   stage_select_.reset();
 
   while (win::app->isOpen()) {
-
     win::mouse_translate();
-
     stage_select_.update(click);
 
     win::app->setupDraw();
 
     stage_select_.draw();
     font.draw("ステージ選択（仮）", Vec2f(0, 50), Color(1, 1, 1)); //debug
+
     win::app->update();
 
     if (click) { break; }
@@ -89,48 +90,19 @@ void GameManager::stage_select() {
 
 // ステージ画面
 void GameManager::stage_play() {
-  Font font("res/font/MeiryoConsolas.ttf");
-  font.size(40);
-
-  bool click;
-  win_judge = 0;
-
-  Vec2f cmd[3] = {
-    { -WIDTH / 2, 60 },
-    { -WIDTH / 2, 0 },
-    { -WIDTH / 2, -60 }
-  };
-
-  Vec2f size(200, 50);
-  Color color;
+  stage_.reset();
 
   while (win::app->isOpen()) {
-    click = false;
+    if (stage_.game_set(mode, stage)) { break; }
 
     win::mouse_translate();
-
-    //if(!bool){update();}
-    // !bool ? update() : pause_update();
+    stage_.update();
 
     win::app->setupDraw();
 
-    for (int i = 0; i < 3; ++i) {
-      color = Color(1, 1, 1);
-      if (Collision::box_to_cursor(cmd[i], size)) {
-        if (win::app->isPushButton(Mouse::LEFT)) { click = true; }
-        color = Color(0, 0, 1);
-      }
-      drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color);
-    }
-    // 勝利したら... debug
-    if (win::app->isPushButton('W')){
-      win_judge = 1;
-    }
+    stage_.draw();
 
-    font.draw("本編（仮）", Vec2f(0, 0), Color(1, 1, 1)); //debug
     win::app->update();
-
-    if (click) { break; }
   }
   win::app->flushInput();
 }
@@ -141,23 +113,29 @@ void GameManager::stage_play() {
 
 // リザルトの処理本体
 void GameManager::result() {
-
   bool click;
 
-   result_.reset();
+  result_.reset();
+
+  if (mode == 1){
+    stage_select_.win();
+  }
+  if (stage == 12){
+    mode = 2;
+  }
 
   while (win::app->isOpen()) {
 
     click = false;
-
-   result_.update(click, EXIT);
+    result_.update(click, exit);
 
     win::app->setupDraw();
 
-   result_.draw(win_judge);
+    result_.draw(mode);
 
     win::app->update();
-    if (click){ break; }
+
+    if (click) { break; }
   }
   win::app->flushInput();
 }

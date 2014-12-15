@@ -7,8 +7,7 @@
 
 // コンストラクタ
 Title::Title() :
-font(std::make_unique<Font>("res/font/alphabet.ttf"))/*,
-BG(Texture("res/png/Title_BG.png"))*/ {
+font(std::make_unique<Font>("res/font/alphabet.ttf")) {
   font->size(40);
 }
 
@@ -18,9 +17,9 @@ void Title::draw() {
 }
 
 // 更新
-void Title::update(){
+void Title::update() {
 }
 
 // リセット
-void Title::reset(){
+void Title::reset() {
 }

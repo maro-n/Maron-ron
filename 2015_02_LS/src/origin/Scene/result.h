@@ -1,8 +1,9 @@
 
 #pragma once
 #include "../System/window_create.h"
-#include "../Object/collision.h"
 #include "../../lib/font.hpp"
+#include "../Object/collision.h"
+#include <cstring>
 
 //
 // ƒŠƒUƒ‹ƒg‰æ–Ê
@@ -16,7 +17,8 @@ class Result {
 
   Texture BG;
   Font font;
-  
+  Col color_variation;
+
   void stage_clear();
   void game_over();
   void game_clear();

@@ -23,7 +23,7 @@ void win::create() {
   }
 }
 
-// マウスカーソルの座標を取得
+// マウス座標の取得
 void win::mouse_translate() {
   mouse = app->mousePosition();
 }
