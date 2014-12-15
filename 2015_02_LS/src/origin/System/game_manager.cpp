@@ -93,6 +93,7 @@ void GameManager::stage_play() {
   font.size(40);
 
   bool click;
+  win_judge = 0;
 
   Vec2f cmd[3] = {
     { -WIDTH / 2, 60 },
@@ -120,6 +121,10 @@ void GameManager::stage_play() {
         color = Color(0, 0, 1);
       }
       drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color);
+    }
+    // Ÿ—˜‚µ‚½‚ç... debug
+    if (win::app->isPushButton('W')){
+      win_judge = 1;
     }
 
     font.draw("–{•Òi‰¼j", Vec2f(0, 0), Color(1, 1, 1)); //debug
@@ -149,7 +154,7 @@ void GameManager::result() {
 
     win::app->setupDraw();
 
-   result_.draw();
+   result_.draw(win_judge);
 
     win::app->update();
     if (click){ break; }

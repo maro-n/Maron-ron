@@ -13,6 +13,9 @@
 
 class GameManager {
   //a
+
+  int win_judge;
+
   Title title_;
   StageSelect stage_select_;
   Result result_;

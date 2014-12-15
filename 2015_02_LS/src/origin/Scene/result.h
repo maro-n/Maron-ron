@@ -9,7 +9,6 @@
 //
 
 class Result {
-  int mode;
 
   Vec2f cmd[2];
   Vec2f size;
@@ -25,7 +24,7 @@ class Result {
 public:
   Result();
 
-  void draw();
+  void draw(int&);
   void update(bool&, bool&);
 
   void reset();

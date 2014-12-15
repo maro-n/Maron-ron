@@ -9,7 +9,6 @@
 Result::Result() :  /*BG(Texture("res/png/Result_BG.png"))*/
 font(Font(("res/font/MeiryoConsolas.ttf")))
 {
-  mode = 1;
   cmd[0] = Vec2f(-WIDTH / 2, 60);
   cmd[1] = Vec2f(-WIDTH / 2, -60);
   size = Vec2f(200, 50);
@@ -17,7 +16,7 @@ font(Font(("res/font/MeiryoConsolas.ttf")))
 }
 
 // •`‰æ
-void Result::draw(){
+void Result::draw(int& mode){
   if (mode == 1){
     stage_clear();
   }
