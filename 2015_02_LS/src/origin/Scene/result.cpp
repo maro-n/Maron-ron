@@ -30,6 +30,13 @@ void Result::stage_clear() {
 void Result::game_over() {
   for (int i = 0; i < 2; ++i) {
     drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color[i]);
+
+    switch (i) {
+      case 0: str = "続ける"; break;
+      default: str = "やめる";
+    }
+
+    font.draw(str, cmd[i], Color(0, 0, 0)); //debug
   }
   font.draw("ゲームオーバー（仮）", Vec2f(0, -50), Color(1, 1, 1)); //debug
 }
@@ -37,6 +44,13 @@ void Result::game_over() {
 void Result::game_clear() {
   for (int i = 0; i < 2; ++i) {
     drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color[i]);
+
+    switch (i) {
+      case 0: str = "やめる"; break;
+      default: str = "やめる";
+    }
+
+    font.draw(str, cmd[i], Color(0, 0, 0)); //debug
   }
   font.draw("ゲームクリア（仮）", Vec2f(0, -50), Color(1, 1, 1)); //debug
 }

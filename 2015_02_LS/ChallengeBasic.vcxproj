@@ -102,6 +102,7 @@
     <ClCompile Include="src\lib\wav.cpp" />
     <ClCompile Include="src\origin\Game\stage.cpp" />
     <ClCompile Include="src\origin\Game\stage_select.cpp" />
+    <ClCompile Include="src\origin\Game\system_data.cpp" />
     <ClCompile Include="src\origin\main.cpp" />
     <ClCompile Include="src\origin\Object\collision.cpp" />
     <ClCompile Include="src\origin\Scene\result.cpp" />
@@ -133,6 +134,7 @@
     <ClInclude Include="src\origin\common.h" />
     <ClInclude Include="src\origin\Game\stage.h" />
     <ClInclude Include="src\origin\Game\stage_select.h" />
+    <ClInclude Include="src\origin\Game\system_data.h" />
     <ClInclude Include="src\origin\Object\collision.h" />
     <ClInclude Include="src\origin\Recource\graphic.h" />
     <ClInclude Include="src\origin\Recource\music.h" />

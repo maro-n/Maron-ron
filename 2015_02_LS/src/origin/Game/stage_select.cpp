@@ -50,13 +50,13 @@ void StageSelect::update(bool& click) {
   for (int i = 0; i < 12; ++i) {
     on_box = -1;
     if (Collision::box_to_cursor(button[i].pos, Vec2f(100, 100))) {
-        on_box = i;
-        if (win::app->isPushButton(Mouse::LEFT)) {
-          if (button[i].mode != 0) {
-            click = true;
-            click_pos = i;
-          }
+      on_box = i;
+      if (win::app->isPushButton(Mouse::LEFT)) {
+        if (button[i].mode != 0) {
+          click = true;
+          click_pos = i;
         }
+      }
       break;
     }
   }
@@ -66,6 +66,7 @@ void StageSelect::update(bool& click) {
 void StageSelect::reset() {
 }
 
+// ”s–k
 void StageSelect::win(){
   button[click_pos].mode = 0;
   button[click_pos].color = color_variation.blue;

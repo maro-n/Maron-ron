@@ -138,6 +138,8 @@ void GameManager::result() {
     if (click) { break; }
   }
   win::app->flushInput();
+
+  if (stage == 12) { exit = true; }
 }
 
 

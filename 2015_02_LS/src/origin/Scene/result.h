@@ -3,7 +3,7 @@
 #include "../System/window_create.h"
 #include "../../lib/font.hpp"
 #include "../Object/collision.h"
-#include <cstring>
+#include <string>
 
 //
 // ƒŠƒUƒ‹ƒg‰æ–Ê
@@ -14,6 +14,7 @@ class Result {
   Vec2f cmd[2];
   Vec2f size;
   Color color[2];
+  std::string str;
 
   Texture BG;
   Font font;

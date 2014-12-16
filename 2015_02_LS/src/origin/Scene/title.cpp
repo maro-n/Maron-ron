@@ -13,7 +13,7 @@ font(std::make_unique<Font>("res/font/alphabet.ttf")) {
 
 // ï`âÊ
 void Title::draw() {
-  drawFillBox(0, 0, 100, 100, Color(1, 1, 1));
+  //drawFillBox(0, 0, 100, 100, Color(1, 1, 1));
 }
 
 // çXêV
