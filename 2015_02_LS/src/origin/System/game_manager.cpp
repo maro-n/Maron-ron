@@ -9,6 +9,7 @@
 // コンストラクタ
 GameManager::GameManager() {
   mode = 0;
+  poli_mode = 0;
   stage = 1;
   exit = false;
 }
@@ -16,6 +17,8 @@ GameManager::GameManager() {
 // ゲーム実行
 void GameManager::play() {
   while (win::app->isOpen() && !exit) {
+    stage = 1;
+    politics_.stage_reset();
     title();
     game();
   }
@@ -52,8 +55,8 @@ void GameManager::title() {
 
 // 本編の処理本体
 void GameManager::game() {
-  while (win::app->isOpen() && !exit) {
-    stage_select();
+  while (win::app->isOpen() && !exit && stage != 12) {
+    politics();
     stage_play();
     result();
   }
@@ -63,23 +66,31 @@ void GameManager::game() {
 void GameManager::pause() {
 }
 
-// ステージセレクト画面
-void GameManager::stage_select() {
-  Font font("res/font/MeiryoConsolas.ttf");
-  font.size(40);
+// 政策画面
+void GameManager::politics() {
 
   bool click = false;
+  poli_mode = 0;
 
-  stage_select_.reset();
+  politics_.politics_reset();
 
   while (win::app->isOpen()) {
     win::mouse_translate();
-    stage_select_.update(click);
+
+    if (win::app->isPushButton(RIGHT)){
+      if (poli_mode == 0){
+        poli_mode = 1;
+      }
+      else if (poli_mode == 1){
+        poli_mode = 0;
+      }
+    }
+
+    politics_.update(poli_mode, click);
 
     win::app->setupDraw();
 
-    stage_select_.draw();
-    font.draw("ステージ選択（仮）", Vec2f(0, 50), Color(1, 1, 1)); //debug
+    politics_.draw(poli_mode);
 
     win::app->update();
 
@@ -118,7 +129,7 @@ void GameManager::result() {
   result_.reset();
 
   if (mode == 1){
-    stage_select_.win();
+    politics_.win();
   }
   if (stage == 12){
     mode = 2;
@@ -138,8 +149,6 @@ void GameManager::result() {
     if (click) { break; }
   }
   win::app->flushInput();
-
-  if (stage == 12) { exit = true; }
 }
 
 

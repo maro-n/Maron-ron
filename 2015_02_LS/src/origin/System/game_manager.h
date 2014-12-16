@@ -4,7 +4,7 @@
 #include "../../lib/font.hpp"
 #include "../Scene/result.h"
 #include "../Scene/title.h"
-#include "../Game/stage_select.h"
+#include "../Game/politics.h"
 #include "../Game/stage.h"
 
 //
@@ -13,21 +13,23 @@
 
 class GameManager {
   Title title_;
-  StageSelect stage_select_;
-  Result result_;
+  Politics politics_;
   Stage stage_;
+  Result result_;
+
+  int mode;
+  int poli_mode;
+  int stage;
 
   void title();
   void game();
 
   void mode_select();
   void pause();
-  void stage_select();
+  void politics();
   void stage_play();
   void result();
 
-  int mode;
-  int stage;
   bool exit;
 
 public:

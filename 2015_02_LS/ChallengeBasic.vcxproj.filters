@@ -94,10 +94,10 @@
     <ClCompile Include="src\origin\Game\stage.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\origin\Game\stage_select.cpp">
+    <ClCompile Include="src\origin\Game\system_data.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\origin\Game\system_data.cpp">
+    <ClCompile Include="src\origin\Game\politics.cpp">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>
@@ -184,9 +184,6 @@
     <ClInclude Include="src\origin\System\game_manager.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="src\origin\Game\stage_select.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="src\origin\Game\stage.h">
       <Filter>Game</Filter>
     </ClInclude>
@@ -194,6 +191,9 @@
       <Filter>System</Filter>
     </ClInclude>
     <ClInclude Include="src\origin\Game\system_data.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\origin\Game\politics.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

@@ -24,6 +24,8 @@ void Result::draw(int& mode) {
 
 void Result::stage_clear() {
   drawFillBox(cmd[0].x(), cmd[0].y(), size.x(), size.y(), color[0]);
+  str = "続ける";
+  font.draw(str, cmd[0], Color(0, 0, 0)); // debug
   font.draw("ステージクリア（仮）", Vec2f(0, -50), Color(1, 1, 1)); //debug
 }
 
@@ -46,7 +48,7 @@ void Result::game_clear() {
     drawFillBox(cmd[i].x(), cmd[i].y(), size.x(), size.y(), color[i]);
 
     switch (i) {
-      case 0: str = "やめる"; break;
+      case 0: str = "タイトルへ"; break;
       default: str = "やめる";
     }
 
