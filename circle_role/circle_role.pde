@@ -36,25 +36,31 @@ void draw()
     textSize(20);
     fill(0);
     text("point", 350, 480);
-    //text(switch_s, 0, 50);
-    //text(switch_w, 0, 100);
-    //text(switch_e, 0, 150);
-    //text(switch_n, 0, 200);
-    ellipse(250, 250, 50, 50);
-    if(mouseX >= 220 && mouseX <= 280 && mouseY > 275 && logo_limit == -1 && switch_s == 0){
-      switch_s = 1;
-    }
-    if(mouseX < 225 && mouseY >= 220 && mouseY <= 280 && logo_limit == -1
-                    && switch_w == 0 && switch_s == 1){
-      switch_w = 1;
-    }
-    if(mouseX >= 220 && mouseX <= 280 && mouseY < 225 && logo_limit == -1
-                     && switch_n == 0 && switch_w == 1){
-      switch_n = 1;
-    }
-    if(mouseX > 275 && mouseY >= 220 && mouseY <= 280 && logo_limit == -1 
-                    && switch_e == 0 && switch_n == 1){
-      switch_e = 1;
+    text(switch_s, 50, 50);
+    text(switch_w, 50, 100);
+    text(switch_e, 50, 150);
+    text(switch_n, 50, 200);
+    text("s", 0, 50);
+    text("w", 0, 100);
+    text("e", 0, 150);
+    text("n", 0, 200);
+     ellipse(250, 250, 50, 50);
+    if(logo_limit == -1){
+      if(mouseX >= 210 && mouseX <= 290 && mouseY > 275 && switch_s == 0){
+        switch_s = 1;
+      }
+      if(mouseX < 225 && mouseY >= 210 && mouseY <= 290
+                      && switch_w == 0 && switch_s == 1){
+        switch_w = 1;
+      }
+      if(mouseX >= 210 && mouseX <= 290 && mouseY < 225
+                       && switch_n == 0 && switch_w == 1){
+        switch_n = 1;
+      }
+      if(mouseX > 275 && mouseY >= 210 && mouseY <= 290
+                      && switch_e == 0 && switch_n == 1){
+        switch_e = 1;
+      }
     }
     if(switch_s == 1 && switch_w == 1 &&  switch_n == 1 && switch_e == 1){
       point += 1;
@@ -73,8 +79,11 @@ void draw()
       noLoop();
     }
     else{
+      fill(0);
       text(point, 420, 480);
       textSize(100);
       text("roll!!", (width / 2) - 100, (height / 2) - 90);
+      fill(255, 0, 0);
+      ellipse(mouseX, mouseY, 10, 10);
     }
 }
