@@ -1,0 +1,12 @@
+﻿2015/10/07 17:34:46 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\GameTemp.vcxproj" (Build ターゲット)。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\Debug\GameTemp.exe" /INCREMENTAL /NOLOGO /LIBPATH:Windows\lib glfw3d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\Debug\GameTemp.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\Debug\GameTemp.lib" /MACHINE:X86 Debug\main.obj
+     1>main.obj : error LNK2019: 未解決の外部シンボル _glfwInit が関数 _main で参照されました。
+     1>MSVCRTD.lib(crtexew.obj) : error LNK2019: 未解決の外部シンボル _WinMain@16 が関数 ___tmainCRTStartup で参照されました。
+     1>C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\Debug\GameTemp.exe : fatal error LNK1120: 2 件の未解決の外部参照
+     1>プロジェクト "C:\Users\vantan\Desktop\授業の内容\ゲーム制作\2015年度\C++ Sample\GameTemp\GameTemp.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+
+ビルドに失敗しました。
+
+経過時間 00:00:00.20
